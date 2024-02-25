@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/yourchik/todo-app"
-	"github.com/yourchik/todo-app/package/handler"
+	"github.com/yourchik/todo-app/pkg/handler"
 	"log"
 )
 
