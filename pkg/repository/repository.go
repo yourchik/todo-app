@@ -5,11 +5,12 @@ import (
 	"github.com/yourchik/todo-app"
 )
 
-type TodoList interface {
-}
-
 type Authorization interface {
 	CreateUser(user todo.User) (int, error)
+	GetUser(username, password string) (todo.User, error)
+}
+
+type TodoList interface {
 }
 
 type TodoItem interface {

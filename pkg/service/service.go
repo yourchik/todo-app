@@ -10,6 +10,7 @@ type TodoList interface {
 
 type Authorization interface {
 	CreateUser(user todo.User) (int, error)
+	GenerateToken(username, password string) (string, error)
 }
 
 type TodoItem interface {
