@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 	"github.com/sirupsen/logrus"
@@ -53,7 +54,7 @@ func main() {
 
 	logrus.Print("Todo-app shutdown ...")
 
-	if err := srv.Shutdown(); err != nil {
+	if err := srv.Shutdown(context.Background()); err != nil {
 		logrus.Errorf("error occured on server shutting down: %s", err.Error())
 	}
 
