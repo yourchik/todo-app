@@ -35,12 +35,13 @@ func main() {
 	}
 
 	db, err := repository.NewPostgresDB(repository.Config{
-		Host:     viper.GetString("db.host"),
-		Port:     viper.GetString("db.port"),
-		Username: viper.GetString("db.user"),
-		DBName:   viper.GetString("db.database"),
-		SSLMode:  viper.GetString("db.sslmode"),
-		Password: os.Getenv("DB_PASSWORD"),
+		Host:       viper.GetString("db.host"),
+		Port:       viper.GetString("db.port"),
+		Username:   viper.GetString("db.user"),
+		DBName:     viper.GetString("db.database"),
+		SSLMode:    viper.GetString("db.sslmode"),
+		SearchPath: viper.GetString("db.search_path"),
+		Password:   os.Getenv("DB_PASSWORD"),
 	})
 	if err != nil {
 		logrus.Fatalf("failed to initialize db: %s", err.Error())

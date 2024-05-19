@@ -6,3 +6,4 @@ db:
     user: "postgres"
     database: "postgres"
     sslmode: "disable"
+    search_path: "todo_app"

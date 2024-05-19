@@ -14,17 +14,18 @@ const (
 )
 
 type Config struct {
-	Host     string
-	Port     string
-	Username string
-	Password string
-	DBName   string
-	SSLMode  string
+	Host       string
+	Port       string
+	Username   string
+	Password   string
+	DBName     string
+	SSLMode    string
+	SearchPath string
 }
 
 func NewPostgresDB(cfm Config) (*sqlx.DB, error) {
-	db, err := sqlx.Open("postgres", fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s sslmode=%s",
-		cfm.Host, cfm.Port, cfm.Username, cfm.DBName, cfm.Password, cfm.SSLMode))
+	db, err := sqlx.Open("postgres", fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s sslmode=%s search_path=%s",
+		cfm.Host, cfm.Port, cfm.Username, cfm.DBName, cfm.Password, cfm.SSLMode, cfm.SearchPath))
 	if err != nil {
 		return nil, err
 	}
