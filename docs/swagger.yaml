@@ -90,11 +90,6 @@ paths:
       description: get all items
       operationId: get-all-items
       parameters:
-      - description: User ID
-        in: path
-        name: userId
-        required: true
-        type: integer
       - description: List ID
         in: path
         name: listId
@@ -136,11 +131,6 @@ paths:
       description: create todo item
       operationId: create-item
       parameters:
-      - description: User ID
-        in: path
-        name: userId
-        required: true
-        type: integer
       - description: List ID
         in: path
         name: listId
@@ -187,11 +177,6 @@ paths:
       description: delete item
       operationId: delete-item
       parameters:
-      - description: User ID
-        in: path
-        name: userId
-        required: true
-        type: integer
       - description: List ID
         in: path
         name: listId
@@ -236,11 +221,6 @@ paths:
       description: get item
       operationId: get-item
       parameters:
-      - description: User ID
-        in: path
-        name: userId
-        required: true
-        type: integer
       - description: List ID
         in: path
         name: listId
@@ -285,11 +265,6 @@ paths:
       description: update item
       operationId: update-item
       parameters:
-      - description: User ID
-        in: path
-        name: userId
-        required: true
-        type: integer
       - description: List ID
         in: path
         name: listId

@@ -14,7 +14,6 @@ import (
 // @ID create-item
 // @Accept json
 // @Produce json
-// @Param userId path int true "User ID"
 // @Param listId path int true "List ID"
 // @Param input body domain.TodoItem true "Item info"
 // @Success 200 {integer} integer 1
@@ -58,7 +57,6 @@ func (h *Handler) createItem(c *gin.Context) {
 // @ID get-all-items
 // @Accept json
 // @Produce json
-// @Param userId path int true "User ID"
 // @Param listId path int true "List ID"
 // @Success 200 {array} domain.TodoItem
 // @Failure 400,404 {object} errorResponse
@@ -93,7 +91,6 @@ func (h *Handler) getAllItems(c *gin.Context) {
 // @ID get-item
 // @Accept json
 // @Produce json
-// @Param userId path int true "User ID"
 // @Param listId path int true "List ID"
 // @Param id path int true "Item ID"
 // @Success 200 {object} domain.TodoItem
@@ -129,7 +126,6 @@ func (h *Handler) getItemById(c *gin.Context) {
 // @ID update-item
 // @Accept json
 // @Produce json
-// @Param userId path int true "User ID"
 // @Param listId path int true "List ID"
 // @Param id path int true "Item ID"
 // @Param input body domain.UpdateItemInput true "Item info"
@@ -173,7 +169,6 @@ func (h *Handler) updateItem(c *gin.Context) {
 // @ID delete-item
 // @Accept json
 // @Produce json
-// @Param userId path int true "User ID"
 // @Param listId path int true "List ID"
 // @Param id path int true "Item ID"
 // @Success 200 {object} statusResponse

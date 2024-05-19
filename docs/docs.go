@@ -37,13 +37,6 @@ const docTemplate = `{
                 "parameters": [
                     {
                         "type": "integer",
-                        "description": "User ID",
-                        "name": "userId",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "type": "integer",
                         "description": "List ID",
                         "name": "listId",
                         "in": "path",
@@ -105,13 +98,6 @@ const docTemplate = `{
                 "summary": "Create todo item",
                 "operationId": "create-item",
                 "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "User ID",
-                        "name": "userId",
-                        "in": "path",
-                        "required": true
-                    },
                     {
                         "type": "integer",
                         "description": "List ID",
@@ -185,13 +171,6 @@ const docTemplate = `{
                 "parameters": [
                     {
                         "type": "integer",
-                        "description": "User ID",
-                        "name": "userId",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "type": "integer",
                         "description": "List ID",
                         "name": "listId",
                         "in": "path",
@@ -257,13 +236,6 @@ const docTemplate = `{
                 "summary": "Update item",
                 "operationId": "update-item",
                 "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "User ID",
-                        "name": "userId",
-                        "in": "path",
-                        "required": true
-                    },
                     {
                         "type": "integer",
                         "description": "List ID",
@@ -340,13 +312,6 @@ const docTemplate = `{
                 "summary": "Delete item",
                 "operationId": "delete-item",
                 "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "User ID",
-                        "name": "userId",
-                        "in": "path",
-                        "required": true
-                    },
                     {
                         "type": "integer",
                         "description": "List ID",
