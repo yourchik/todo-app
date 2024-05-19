@@ -17,8 +17,8 @@ import (
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /auth/sing-up [post]
-func (h *Handler) singUp(c *gin.Context) {
+// @Router /auth/sign-up [post]
+func (h *Handler) signUp(c *gin.Context) {
 	var input domain.User
 
 	if err := c.BindJSON(&input); err != nil {
@@ -54,7 +54,7 @@ type singInInput struct {
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
 // @Router /auth/sign-in [post]
-func (h *Handler) singIn(c *gin.Context) {
+func (h *Handler) signIn(c *gin.Context) {
 	var input singInInput
 
 	if err := c.BindJSON(&input); err != nil {

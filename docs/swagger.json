@@ -828,9 +828,6 @@
                 "done": {
                     "type": "boolean"
                 },
-                "id": {
-                    "type": "integer"
-                },
                 "title": {
                     "type": "string"
                 }
@@ -844,9 +841,6 @@
             "properties": {
                 "description": {
                     "type": "string"
-                },
-                "id": {
-                    "type": "integer"
                 },
                 "title": {
                     "type": "string"

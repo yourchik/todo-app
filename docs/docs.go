@@ -834,9 +834,6 @@ const docTemplate = `{
                 "done": {
                     "type": "boolean"
                 },
-                "id": {
-                    "type": "integer"
-                },
                 "title": {
                     "type": "string"
                 }
@@ -850,9 +847,6 @@ const docTemplate = `{
             "properties": {
                 "description": {
                     "type": "string"
-                },
-                "id": {
-                    "type": "integer"
                 },
                 "title": {
                     "type": "string"
