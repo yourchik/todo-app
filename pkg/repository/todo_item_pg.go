@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/jmoiron/sqlx"
 	"github.com/sirupsen/logrus"
-	"github.com/yourchik/todo-app"
+	"github.com/yourchik/todo-app/domain"
 	"strings"
 )
 
@@ -16,7 +16,7 @@ func NewToDoItemPostgres(db *sqlx.DB) *ToDoItemPostgres {
 	return &ToDoItemPostgres{db: db}
 }
 
-func (r *ToDoItemPostgres) Create(listId int, item todo.TodoItem) (int, error) {
+func (r *ToDoItemPostgres) Create(listId int, item domain.TodoItem) (int, error) {
 	tx, err := r.db.Begin()
 	if err != nil {
 		return 0, err
@@ -41,8 +41,8 @@ func (r *ToDoItemPostgres) Create(listId int, item todo.TodoItem) (int, error) {
 	return itemId, tx.Commit()
 }
 
-func (r *ToDoItemPostgres) GetAll(userId, listId int) ([]todo.TodoItem, error) {
-	var items []todo.TodoItem
+func (r *ToDoItemPostgres) GetAll(userId, listId int) ([]domain.TodoItem, error) {
+	var items []domain.TodoItem
 	query := fmt.Sprintf(`SELECT ti.id, ti.title, ti.description, ti.done FROM %s ti INNER JOIN %s li on ti.id = li.item_id 
 									INNER JOIN %s ul on ul.list_id = li.list_id 
                                      WHERE li.list_id = $1 AND ul.user_id = $2`,
@@ -53,8 +53,8 @@ func (r *ToDoItemPostgres) GetAll(userId, listId int) ([]todo.TodoItem, error) {
 	return items, nil
 }
 
-func (r *ToDoItemPostgres) GetById(userId, itemId int) (todo.TodoItem, error) {
-	var item todo.TodoItem
+func (r *ToDoItemPostgres) GetById(userId, itemId int) (domain.TodoItem, error) {
+	var item domain.TodoItem
 	query := fmt.Sprintf(`SELECT ti.id, ti.title, ti.description, ti.done FROM %s ti INNER JOIN %s li on ti.id = li.item_id 
 									INNER JOIN %s ul on ul.list_id = li.list_id
 									 WHERE ti.id = $1 AND ul.user_id = $2`,
@@ -72,7 +72,7 @@ func (r *ToDoItemPostgres) Delete(userId, itemId int) error {
 	return err
 }
 
-func (r *ToDoItemPostgres) Update(userId, itemId int, input todo.UpdateItemInput) error {
+func (r *ToDoItemPostgres) Update(userId, itemId int, input domain.UpdateItemInput) error {
 	setValues := make([]string, 0)
 	args := make([]interface{}, 0)
 	argId := 1
